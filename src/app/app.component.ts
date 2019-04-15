@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,39 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-learn';
+
+  @Input()
+  dataUser: any;
+
+  isEdit:boolean;
+
+  users = [
+    {
+      id: 1,
+      name: 'User 1',
+      address: 'Jakarta1'
+    },
+    {
+      id: 2,
+      name: 'User 2',
+      address: 'Jakarta2'
+    },
+    {
+      id: 3,
+      name: 'User 3',
+      address: 'Jakarta3'
+    },
+  ]
+
+  editPage(us){
+    this.dataUser = us;
+    console.log(this.dataUser);
+    this.isEdit = true;
+  }
+
+  doCancel(data){
+    this.isEdit=data;
+  }
+
+  
 }
