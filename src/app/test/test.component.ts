@@ -35,7 +35,7 @@ export class TestComponent implements OnInit {
       number => {
         console.log(number);
         if (number == undefined){
-           console.log("kamu ganteng");
+           console.log("kamu ganteng sekali");
            keepGoing=false;
 
         }
